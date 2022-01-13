@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="84.808266mm"
-   height="88.081215mm"
-   viewBox="0 0 84.808266 88.081215"
+   width="88.081001mm"
+   height="88.081001mm"
+   viewBox="0 0 88.081002 88.081001"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
-   sodipodi:docname="xenovaping.svg"
+   sodipodi:docname="logo.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -30,21 +30,21 @@
      inkscape:object-nodes="false"
      inkscape:snap-nodes="false"
      inkscape:zoom="1.0897757"
-     inkscape:cx="247.75741"
+     inkscape:cx="57.810061"
      inkscape:cy="219.76999"
-     inkscape:window-width="1920"
-     inkscape:window-height="1056"
-     inkscape:window-x="1920"
-     inkscape:window-y="24"
+     inkscape:window-width="1916"
+     inkscape:window-height="1034"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
      id="defs2">
     <rect
        x="-140.17239"
-       y="35.130274"
+       y="35.130276"
        width="126.93745"
-       height="182.87931"
+       height="182.8793"
        id="rect5739" />
     <rect
        x="533.45703"
@@ -71,16 +71,16 @@
      id="layer1"
      transform="translate(-62.595867,-88.630951)">
     <rect
-       style="fill:#0068ff;fill-opacity:1;stroke-width:0.264583"
+       style="fill:#0068ff;fill-opacity:1;stroke-width:0.269639"
        id="rect25865"
-       width="84.808266"
-       height="88.081215"
+       width="88.081001"
+       height="88.081001"
        x="62.595867"
        y="88.630951"
-       ry="22.5" />
+       ry="22.499945" />
     <g
        aria-label="X"
-       transform="matrix(0.26458333,0,0,0.26458333,53.34796,0.07306084)"
+       transform="matrix(0.26458333,0,0,0.26458333,54.984328,0.07306084)"
        id="text823"
        style="font-style:italic;font-weight:bold;font-size:192px;line-height:1.25;-inkscape-font-specification:'sans-serif Bold Italic';white-space:pre;shape-inside:url(#rect825);fill:#ffffff">
       <path
@@ -95,12 +95,12 @@
     <circle
        style="fill:#00ff00;fill-opacity:0.701246;stroke-width:0.775413"
        id="path26042"
-       cx="129.08382"
+       cx="131.21295"
        cy="106.95127"
        r="11.63118" />
     <g
        aria-label="n"
-       transform="matrix(0.37968573,0,0,0.37968573,-93.199121,9.4342835)"
+       transform="matrix(0.37968573,0,0,0.37968573,-91.562753,9.4342835)"
        id="text38420"
        style="font-size:96px;line-height:1.25;white-space:pre;shape-inside:url(#rect38422);fill:#ffffff">
       <path
@@ -111,13 +111,13 @@
     <circle
        style="fill:#00ff00;stroke-width:0.276366"
        id="path47682"
-       cx="129.08382"
+       cx="131.21295"
        cy="106.95127"
        r="7.3117471" />
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,62.595867,88.630951)"
        id="text5737"
-       style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;white-space:pre;shape-inside:url(#rect5739)" />
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect5739);fill:#000000;fill-opacity:1;stroke:none" />
   </g>
 </svg>
