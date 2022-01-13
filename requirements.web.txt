@@ -1,0 +1,5 @@
+Flask==2.0.2
+SQLAlchemy==1.4.29
+psycopg2==2.9.2
+busGal-api==0.0.5.1
+gunicorn==20.1.0

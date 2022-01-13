@@ -1,0 +1,4 @@
+SQLAlchemy==1.4.29
+psycopg2==2.9.2
+busGal-api==0.0.5.1
+apprise==0.9.6

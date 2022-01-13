@@ -1,0 +1,12 @@
+FROM python:3.9.6-slim
+RUN apt-get update \
+    && apt-get -y install libpq-dev gcc # Dependecies for psycopg2
+COPY requirements.web.txt /requirements.txt
+RUN pip3 install -r /requirements.txt
+COPY . /app
+RUN rm -rf /app/notifications.py
+RUN rm -rf /app/entrypoint.notifications.sh
+RUN rm -rf /app/Dockerfile.notifications
+RUN mv /app/entrypoint.web.sh /app/entrypoint.sh
+WORKDIR /app
+ENTRYPOINT ["./entrypoint.sh"]

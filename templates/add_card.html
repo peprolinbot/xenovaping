@@ -1,0 +1,51 @@
+{% extends 'base_bootstrap.html' %}
+    {% block title %}Add card{% endblock %}
+    {% block head %}
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='card_pages.css') }}" rel="stylesheet">
+  {% endblock %}
+  {% block body_classes %}align-center{% endblock %}
+  {% block body %}
+    <main class="form-card">
+      <script>
+        function addCard(form) {
+          var xhr = new XMLHttpRequest();
+          var url='/api/add_card';
+          xhr.open("POST", url);
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+              if (xhr.responseText === "OK") {
+                modalAlert("Card added succesfully", "Now you will receive an email when you can get a refund of your trips.");
+              } else {
+                try {
+                  data = JSON.parse(xhr.responseText);
+                  modalAlert("Card already exists", "This card is already being monitored.");
+                } catch(e) {
+                modalAlert("There was an error adding your card", "Open an issue in GitHub if this persists and you did nothing wrong.");
+                }
+              }
+            }
+          };
+          xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+          var data = {number:form.number.value, email: form.email.value};
+          xhr.send(JSON.stringify(data));
+
+        }
+      </script>
+      <form action="javascript:;" onsubmit="return addCard(this);">
+        <h1 class="h3 mb-3 fw-normal">Add a card to monitor</h1>
+
+        <div class="form-floating">
+          <input type="text" class="form-control" id="floatingInput" name="number" placeholder="9870xxxxxxxx">
+          <label for="floatingInput">Card number</label>
+        </div>
+        <div class="form-floating">
+          <input type="email" class="form-control last-input" id="floatingInput" name="email" placeholder="name@example.com">
+          <label for="floatingInput">Your email address</label>
+        </div>
+
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Monitor!</button>
+      </form>
+    </main>
+  {% endblock %}
+</html>

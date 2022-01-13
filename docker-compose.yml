@@ -1,0 +1,36 @@
+version: '3.3'
+services:
+  web:
+    image: ghcr.io/peprolinbot/xenovaping:web
+    environment:
+      - DB_USER=postgres
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=postgres
+      - TPGAL_EMAIL=${TPGAL_EMAIL}
+      - TPGAL_PASSWORD=${TPGAL_PASSWORD}
+    ports:
+      - 8080:8000
+    links:
+      - db
+
+  notifications:
+    image: ghcr.io/peprolinbot/xenovaping:notifications
+    environment:
+      - DB_USER=postgres
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=postgres
+      - TPGAL_EMAIL=${TPGAL_EMAIL}
+      - TPGAL_PASSWORD=${TPGAL_PASSWORD}
+      - CHECK_INTERVAL=${CHECK_INTERVAL}
+      - APPRISE_EMAIL_URL=${APPRISE_EMAIL_URL}
+    links:
+      - db
+
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=${DB_PASSWORD}

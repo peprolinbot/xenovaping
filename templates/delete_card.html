@@ -1,0 +1,46 @@
+{% extends 'base_bootstrap.html' %}
+    {% block title %}Delete card{% endblock %}
+    {% block head %}
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='card_pages.css') }}" rel="stylesheet">
+  {% endblock %}
+  {% block body_classes %}align-center{% endblock %}
+  {% block body %}
+    <main class="form-card">
+      <script>
+        function deleteCard(form) {
+          var xhr = new XMLHttpRequest();
+          var url='/api/delete_card';
+          xhr.open("POST", url);
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+              if (xhr.responseText === "OK") {
+                modalAlert("Card deleted succesfully", "You will no longer receive an emails from me.");
+              } else {
+                try {
+                  data = JSON.parse(xhr.responseText);
+                  modalAlert("Card already deleted", "This card had already been deleted.");
+                } catch(e) {
+                modalAlert("There was an error deleting your card", "Open an issue in GitHub if this persists and you did nothing wrong.");
+                }
+              }
+            }
+          };
+          xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+          var data = {number:form.number.value};
+          xhr.send(JSON.stringify(data));
+        }
+      </script>
+      <form action="javascript:;" onsubmit="return deleteCard(this);">
+        <h1 class="h3 mb-3 fw-normal">Stop monitoring your card</h1>
+
+        <div class="form-floating">
+          <input type="text" class="form-control single-input" id="floatingInput" name="number" placeholder="9870xxxxxxxx">
+          <label for="floatingInput">Card number</label>
+        </div>
+
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Delete!</button>
+      </form>
+    </main>
+  {% endblock %}
+</html>
