@@ -7,7 +7,7 @@ An instance hosted by me its avaliable at [xenovaping.peprolinbot.com](https://x
 
 ### 🐳 Docker (Recommended)
 
-If you want to host this yourself, you probbably know the way, but just in case here are some nice, little, simple instrunctions on how to do it using docker-compose:
+If you want to host this yourself, you probbably know the way, but just in case here are some nice, little, simple instructions on how to do it using docker-compose:
 
 ```bash
 # Create a directory and enter it
