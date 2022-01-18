@@ -19,7 +19,11 @@
               } else {
                 try {
                   data = JSON.parse(xhr.responseText);
-                  modalAlert("Card already deleted", "This card had already been deleted.");
+                  if (data.error == "Card already exists") {
+                    modalAlert("Card already deleted", "This card had already been deleted.");
+                  } else if (data.error == "Use a valid card number") {
+                    modalAlert("Use a valid card number", "This card number isn't right.");
+                  }
                 } catch(e) {
                 modalAlert("There was an error deleting your card", "Open an issue in GitHub if this persists and you did nothing wrong.");
                 }
