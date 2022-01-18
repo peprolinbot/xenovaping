@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: Build push Docker images to GitHub Packages
+    name: Build and push Docker images to GitHub Packages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
