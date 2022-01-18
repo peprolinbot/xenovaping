@@ -1,4 +1,4 @@
-name: Docker multi-arch image building and publishing
+name: Docker build & push
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: Build and push Docker image to GitHub Packages
+    name: Build push Docker images to GitHub Packages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -41,7 +41,7 @@ jobs:
           # labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
-      - name: Use Dockerfile.web
+      - name: Use Dockerfile.notifications
         run: cp Dockerfile.notifications Dockerfile
       - name: Build and push :notifications
         uses: docker/build-push-action@v2
