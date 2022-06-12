@@ -3,6 +3,7 @@ import os
 import busGal_api as busgal
 
 from sqlalchemy import create_engine
+from sqlalchemy.orm import scoped_session
 from sqlalchemy.orm import sessionmaker
 
 import database
@@ -15,9 +16,7 @@ DB_NAME = os.environ.get('DB_NAME')
 # Set up database
 engine = create_engine(f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}")
 database.Base.metadata.create_all(bind=engine)
-Session = sessionmaker()
-Session.configure(bind=engine)
-session = Session()
+session = scoped_session(sessionmaker(bind=engine))
 # ---------------
 
 TPGAL_EMAIL = os.environ.get('TPGAL_EMAIL')
