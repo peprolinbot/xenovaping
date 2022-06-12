@@ -1,7 +1,7 @@
 # xenovaping 🟢
 
 Unofficial service which sends you an email when you can get the payback of your trips done with the Xente Nova card. 
-An instance hosted by me its avaliable at [xenovaping.peprolinbot.com](https://xenovaping.peprolinbot.com/).
+An instance hosted by me is avaliable at [xenovaping.peprolinbot.com](https://xenovaping.peprolinbot.com/).
 
 ## 🔧 Deploy it yourself
 
