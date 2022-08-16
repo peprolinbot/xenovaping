@@ -9,7 +9,9 @@ from config import *
 import database
 
 async def check_cards_notify():
-    for card in database.get_cards(session):
+    with session_scope() as session:
+    	cards = database.get_cards(session)
+    for card in cards:
         online_card = account.get_card(card.number)
         if card.notified == False:
             if online_card.pending > 0:

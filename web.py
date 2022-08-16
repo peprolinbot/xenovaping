@@ -26,11 +26,13 @@ def add_card():
     except ValueError:
         return {"error": "Use a valid card number"}
     email = request.json["email"]
-    card = database.get_card(session, number)
+    with session_scope() as session:
+    	card = database.get_card(session, number)
     if card != None:
         return {"error": "Card already exists"}
     account.add_card(number, str(number))
-    database.add_card(session, number, email)
+    with session_scope() as session:
+    	database.add_card(session, number, email)
     return "OK"
 
 @app.route('/api/delete_card', methods=['POST'])
@@ -40,7 +42,8 @@ def delete_card():
         number = int(number)
     except ValueError:
         return {"error": "Use a valid card number"}
-    deleted = database.delete_card(session, number)
+    with session_scope() as session:
+    	deleted = database.delete_card(session, number)
     if deleted == False: # Card doesn't exist in database
         return {"error": "Card already deleted"}
     account.delete_card(number)
