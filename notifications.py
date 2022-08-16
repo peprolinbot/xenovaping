@@ -11,8 +11,9 @@ import database
 async def check_cards_notify():
     with session_scope() as session:
     	cards = database.get_cards(session)
-    for card in cards:
-        online_card = account.get_card(card.number)
+    	card_numbers = [card.number for card in cards]
+    for number in card_numbers:
+        online_card = account.get_card(number)
         if card.notified == False:
             if online_card.pending > 0:
                 apobj = apprise.Apprise()
