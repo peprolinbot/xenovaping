@@ -1,3 +1,6 @@
+# ⚠️ Project DEPRECATED in favor of https://codeberg.org/peprolinbot/bus.gal-web
+bus.gal-web is more polished and has more functionality
+
 # xenovaping 🟢
 
 Unofficial service which sends you an email when you can get the payback of your trips done with the Xente Nova card. 
